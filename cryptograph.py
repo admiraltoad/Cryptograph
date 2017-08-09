@@ -26,12 +26,12 @@ def main():
     html_table = "<table>\n"
 
     current_line = ""
-    for word in text.split():
+    for word in text.lower().split():
         if len(word) > 12:
             raise Exception("Entry too long '{0}'".format(word))
 
         if (len(current_line) + len(word)) > 12:
-            html_table += encrypt_html_table_row(current_line)
+            html_table += encrypt_html_table_row(current_line.strip())
             current_line = "" ## reset        
         current_line += word + " "
 
