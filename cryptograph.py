@@ -8,15 +8,20 @@ def encrypt_html_table_row(text):
     if len(text) > 12:
         raise Exception("Entry too long '{0}'".format(text))
 
-    table_row = "  </tr>\n"
+    table_row1 = "  </tr>\n"
+    table_row2 = "  </tr>\n"
     for letter in text:        
-        table_row += "    <td style=\"width:75px;height:75px;\">"
+        table_row1 += "    <td style=\"width:75px;height:75px;\">"
+        table_row2 += "    <td style=\"width:75px;height:25px;"
         if letter.isalpha(): 
-            table_row += "<img src=\".\keys\{0}.jpg\">".format(letter)
-        table_row += "</td>\n".format(letter)                    
-    table_row += "  <tr>\n"
+            table_row1 += "<img src=\".\keys\{0}.jpg\">".format(letter)
+            table_row2 += "border-bottom:1px solid;"
+        table_row1 += "</td>\n"          
+        table_row2 += "\"></td>\n"
+    table_row1 += "  <tr>\n"
+    table_row2 += "  <tr>\n"
 
-    return table_row
+    return table_row1 + table_row2
 
 def main():
     text = input("Text to Encrypt: ")
