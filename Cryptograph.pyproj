@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6e81ab2e-21e8-4065-b163-a47b6e8d3f94}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>cryptograph.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="cryptograph.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="keys\a.jpg" />
+    <Content Include="keys\b.jpg" />
+    <Content Include="keys\c.jpg" />
+    <Content Include="keys\d.jpg" />
+    <Content Include="keys\e.jpg" />
+    <Content Include="keys\f.jpg" />
+    <Content Include="keys\g.jpg" />
+    <Content Include="keys\h.jpg" />
+    <Content Include="keys\i.jpg" />
+    <Content Include="keys\j.jpg" />
+    <Content Include="keys\k.jpg" />
+    <Content Include="keys\l.jpg" />
+    <Content Include="keys\m.jpg" />
+    <Content Include="keys\n.jpg" />
+    <Content Include="keys\o.jpg" />
+    <Content Include="keys\p.jpg" />
+    <Content Include="keys\q.jpg" />
+    <Content Include="keys\r.jpg" />
+    <Content Include="keys\s.jpg" />
+    <Content Include="keys\t.jpg" />
+    <Content Include="keys\u.jpg" />
+    <Content Include="keys\v.jpg" />
+    <Content Include="keys\w.jpg" />
+    <Content Include="keys\x.jpg" />
+    <Content Include="keys\y.jpg" />
+    <Content Include="keys\z.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="keys" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
