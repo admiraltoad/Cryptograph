@@ -8,8 +8,8 @@ def encrypt_html_table_row(text):
     if len(text) > 12:
         raise Exception("Entry too long '{0}'".format(text))
 
-    table_row1 = "  </tr>\n"
-    table_row2 = "  </tr>\n"
+    table_row1 = "  <tr>\n"
+    table_row2 = "  <tr>\n"
     for letter in text:        
         table_row1 += "    <td style=\"width:75px;height:75px;\">"
         table_row2 += "    <td style=\"width:75px;height:25px;"
@@ -18,8 +18,8 @@ def encrypt_html_table_row(text):
             table_row2 += "border-bottom:1px solid;"
         table_row1 += "</td>\n"          
         table_row2 += "\"></td>\n"
-    table_row1 += "  <tr>\n"
-    table_row2 += "  <tr>\n"
+    table_row1 += "  </tr>\n"
+    table_row2 += "  </tr>\n"
 
     return table_row1 + table_row2
 
@@ -35,13 +35,20 @@ def main():
         if len(word) > 12:
             raise Exception("Entry too long '{0}'".format(word))
 
+        newline = False
+        if word.endswith("."):
+            word = word[:1]
+            newline = True        
+
         if (len(current_line) + len(word)) > 12:
             html_table += encrypt_html_table_row(current_line.strip())
+            if newline:
+                html_table += "  <tr><td colspan=\"12\" style=\"width:900px;height:25px;\">&nbsp;</td></tr>\n"
             current_line = "" ## reset        
         current_line += word + " "
 
     if len(current_line) > 0:
-        html_table += encrypt_html_table_row(current_line)
+        html_table += encrypt_html_table_row(current_line.strip())
 
     html_table += "</table>\n"    
     
